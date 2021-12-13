@@ -26,7 +26,6 @@ function TaskCreator(props) {
     setDate("")
     setTime("")
   }
-console.log(date);
   return (
     <div>
       <input type="text" placeholder="write your task" onChange={GetTask} value={task}></input>
