@@ -1,0 +1,41 @@
+.Item {
+  display: flex;
+  justify-content: center;
+}
+
+.List {
+  list-style: none;
+  border-bottom: 2px black solid;
+  border-left: 2px black solid;
+  border-right: 2px black solid;
+  margin-top: 40px;
+  width: 700px
+}
+
+.Title {
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid #000;
+  line-height: 0em;
+  margin: -1px 0 20px;
+}
+
+.Title span {
+  background: #fff;
+  padding: 0 10px;
+}
+
+.CloseButton {
+  margin-left: 630px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: red;
+  font-size: medium;
+  z-index: 1;
+}
+
+.BodyText{
+  word-wrap: break-word;
+  margin: 10px;
+}
