@@ -2,6 +2,7 @@ import './App.css';
 import List from './components/list/List';
 import TaskCreator from './components/taskcreator/TaskCreator';
 import React, { useState } from 'react';
+import ButtonPopup from './components/popupButton/ButtonPopup';
 
 function App() {
   const listitems = [
@@ -33,8 +34,8 @@ function App() {
 
   return (
     <div className="App">
+      <ButtonPopup fullitem={(task) => { setTaskarr(taskarr.concat(task)) }} />
       <List tasks={taskarr} onDelete={deleteHandler} />
-      <TaskCreator fullitem={(task) => { setTaskarr(taskarr.concat(task)) }} />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import "./TaskCreator.css"
 
 function TaskCreator(props) {
   const [task, setTask] = useState("")
@@ -20,19 +21,31 @@ function TaskCreator(props) {
   }
 
   function ReturnItem() {
-    props.fullitem({ task, description, date: new Date(date + " " + time), deleted: false })
-    setDescription("")
-    setTask("")
-    setDate("")
-    setTime("")
-  }
+    if (task && description && date && time !== "") {
+      
+        props.fullitem({ task, description, date: new Date(date + " " + time), deleted: false })
+        setDescription("")
+        setTask("")
+        setDate("")
+        setTime("")
+        props.onExit()
+      }
+      else
+      {
+        return alert("make sure you added all the information needed")
+      }
+    }
+  
   return (
-    <div>
-      <input type="text" placeholder="write your task" onChange={GetTask} value={task}></input>
-      <input type="text" placeholder="description..." onChange={GetDescription} value={description}></input>
-      <input type="date" onChange={GetDate} value={date}></input>
-      <input type="time" onChange={GetTime} value={time}></input>
-      <button onClick={ReturnItem}>Save</button>
+    <div className="modalBackground">
+      <div className="modalContainer">
+        <button onClick={props.onExit}> X </button>
+        <input type="text" placeholder="write your task" onChange={GetTask} value={task}></input>
+        <input type="text" placeholder="description..." onChange={GetDescription} value={description}></input>
+        <input type="date" onChange={GetDate} value={date}></input>
+        <input type="time" onChange={GetTime} value={time}></input>
+        <button onClick={ReturnItem}>Save</button>
+      </div>
     </div>
   )
 }
