@@ -23,7 +23,7 @@ function TaskCreator(props) {
   function ReturnItem() {
     if (task && description && date && time !== "") {
       
-        props.fullitem({ task, description, date: new Date(date + " " + time), deleted: false })
+        props.fullitem({ task, description, date: new Date(date + " " + time), })
         setDescription("")
         setTask("")
         setDate("")
