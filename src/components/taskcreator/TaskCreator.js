@@ -3,9 +3,9 @@ import React, { useState } from 'react'
 function TaskCreator(props) {
   const [task, setTask] = useState("")
   const [description, setDescription] = useState("")
-  const[time, setTime] = useState("")
-  const[date, setDate] = useState("")
-  
+  const [time, setTime] = useState("")
+  const [date, setDate] = useState("")
+
   function GetTask(e) {
     setTask(e.target.value)
   }
@@ -20,7 +20,7 @@ function TaskCreator(props) {
   }
 
   function ReturnItem() {
-    props.fullitem({ task, description, date:new Date(date + " " + time)})
+    props.fullitem({ task, description, date: new Date(date + " " + time), deleted: false })
     setDescription("")
     setTask("")
     setDate("")
@@ -30,8 +30,8 @@ function TaskCreator(props) {
     <div>
       <input type="text" placeholder="write your task" onChange={GetTask} value={task}></input>
       <input type="text" placeholder="description..." onChange={GetDescription} value={description}></input>
-      <input type="date" onChange={GetDate} value = {date}></input>
-      <input type="time" onChange={GetTime} value = {time}></input>
+      <input type="date" onChange={GetDate} value={date}></input>
+      <input type="time" onChange={GetTime} value={time}></input>
       <button onClick={ReturnItem}>Save</button>
     </div>
   )
