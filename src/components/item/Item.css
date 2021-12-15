@@ -9,7 +9,7 @@
   border-left: 2px black solid;
   border-right: 2px black solid;
   margin-top: 40px;
-  width: 700px
+  width: 700px;
 }
 
 .Title {
@@ -30,12 +30,24 @@
   cursor: pointer;
   border: none;
   background: none;
-  color: red;
-  font-size: medium;
+  color: rgb(170, 165, 165);
+  font-size: large;
   z-index: 1;
 }
 
+.CloseButton:hover {
+  color: gray;
+}
+
+
 .BodyText{
   word-wrap: break-word;
-  margin: 10px;
+  margin-bottom: 70px;
+}
+
+.DateAndTime{
+  margin-top: -20px;
+  margin-left: 10px;
+  width: fit-content;
+  border-bottom: 1px solid black;
 }

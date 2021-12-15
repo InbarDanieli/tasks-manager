@@ -36,7 +36,7 @@ function TaskCreator(props) {
   }
 
   return (
-    <div className="modalBackground">
+    <div className="modalBackground" onClick ={props.onExit}>
       <div className="modalContainer">
         <button className="closeButton" onClick={props.onExit}> <b> X </b> </button>
         <input className="TaskTitle" type="text" placeholder="write your task" onChange={GetTask} value={task}></input>
