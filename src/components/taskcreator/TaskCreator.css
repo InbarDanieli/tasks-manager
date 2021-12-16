@@ -11,10 +11,8 @@
 }
 
 .modalContainer {
-  min-width: 40%;
-  min-height: 60%;
-  max-width: 40%;
-  max-height: 60%;
+ height: fit-content;
+ width: 500px;
   border-radius: 12px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -40,46 +38,92 @@
 .TaskTitle {
   font-size: 150%;
   margin-bottom: 5%;
-  max-height: 10%;
-  min-height: 10%;
-  max-width: 100%;
-  min-width: 100%;
+  width: 100%;
   word-wrap: break-word;
   border-radius: 5px;
-  border: 1px solid black;
+  resize: initial;
 }
 
 .TaskText {
   margin-bottom: 3%;
-  min-height: 30%;
-  width: 90%;
+  height: 300px;
   width: 100%;
-  height: 30%;
   resize: none;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 3px solid #ccc;
+  outline: none;
+  transition: 0.5s;
 }
+
+.TaskText:focus{
+  border: 3px solid #555;
+}
+
 
 .TaskDate {
   margin-bottom: 10%;
   border-radius: 5px;
-  border: 1px solid black;
 }
 
 .TaskTime {
   margin-left: 5%;
   border-radius: 5px;
-  border: 1px solid black;
 }
 
+input{
+  border: 3px solid #ccc;
+  outline: none;
+  transition: 0.5s;
+}
+
+input:focus {
+  border: 3px solid #555;
+}
+
+
 .saveButton {
-  width: 20%;
-  border-radius: 5px;
-  border: 1px solid black;
+border: none;
+background: none;
+font-size: 20px;
 }
 
 .cancelButton {
-  margin-left: 2%;
-  border-radius: 5px;
-  border: 1px solid black;
+  margin-left: 6%;
+  border: none;
+  background: none;
+  font-size: 20px;
+}
+
+.changesButtons button{
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #2886c0;
+  border: dashed 1px #67c5ff;
+  background: #f2fcff;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.changesButtons button:hover {
+  background: #7dc3e9;
+  color: #FFF;
+}
+
+
+/* continue!: */
+
+@media screen and (max-width: 500px) {
+  .modalContainer{
+    width: 100px;
+    height:100px;
+  }
+
+  .closeButton {
+    font-size: 5px;
+  }
+  .modalContainer input{
+    font-size: 5px;
+margin-bottom: 0px;
+  }
 }

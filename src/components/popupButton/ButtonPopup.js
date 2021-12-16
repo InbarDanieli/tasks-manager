@@ -6,8 +6,8 @@ function ButtonPopup(props) {
   const [usepopup, setUsepopup] = useState(false)
 
   return (
-    <div className = "button">
-      <button onClick={() => { setUsepopup(true) }}>Add Task</button>
+    <div>
+      <button className = "button" onClick={() => { setUsepopup(true) }}>Add Task</button>
       {usepopup && <TaskCreator onExit={() => setUsepopup(false)} fullitem = {props.fullitem}/>}
     </div>)
 }
