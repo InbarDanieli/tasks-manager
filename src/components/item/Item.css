@@ -25,19 +25,18 @@
   padding: 0 10px;
 }
 
-.TrashButton {
+.CloseButton {
   margin-left: 630px;
-  margin-bottom: 10px;
   cursor: pointer;
   border: none;
   background: none;
+  color: rgb(170, 165, 165);
   font-size: large;
   z-index: 1;
-  filter: opacity(0.4) drop-shadow(0 0 0 gray);
 }
 
-.TrashButton:hover {
-  filter: opacity(1) drop-shadow(0 0 0 gray);
+.CloseButton:hover {
+  color: gray;
 }
 
 
