@@ -3,8 +3,12 @@ import "./TaskCreator.css"
 
 function TaskCreator(props) {
   var today = new Date(),
-  dateToday = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    dateToday = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
+
+  const [chageDatebutton, setChageDatebutton] = useState("-")
+  const [disable, setDisable] = useState(false)
+  const [removedate, setRemovedate] = useState("block")
   const [task, setTask] = useState("")
   const [description, setDescription] = useState("")
   const [time, setTime] = useState("00:00:00")
@@ -24,10 +28,25 @@ function TaskCreator(props) {
     setTime(e.target.value)
   }
 
+  function ChangeDate() {
+    if (disable) {
+      setRemovedate("block")
+      setChageDatebutton("-")
+      setDisable(!disable)
+    }
+
+    else
+    {
+      setRemovedate("none")
+      setChageDatebutton("+")
+      setDisable(!disable)
+    }
+  }
+
   function ReturnItem() {
     if (task && description && date && time !== "") {
 
-      props.fullitem({ task, description, date: new Date(date + " " + time), })
+      props.fullitem({ task, description, date: new Date(date + " " + time), removedate, })
       setDescription("")
       setTask("")
       setDate("")
@@ -46,10 +65,11 @@ function TaskCreator(props) {
         <input className="TaskTitle" type="text" placeholder="write your task" onChange={GetTask} value={task}></input>
         <textarea className="TaskText" placeholder="description..." onChange={GetDescription} value={description}></textarea>
         <div>
-          <input className="TaskDate" type="date" onChange={GetDate} value={date}></input>
-          <input className="TaskTime" type="time" onChange={GetTime} value={time}></input>
+          <input className="TaskDate" type="date" onChange={GetDate} value={date} disabled={disable}></input>
+          <input className="TaskTime" type="time" onChange={GetTime} value={time} disabled={disable}></input>
+          <button onClick={ChangeDate}> {chageDatebutton} </button>
         </div>
-        <div className = "changesButtons">
+        <div className="changesButtons">
           <button className="saveButton" onClick={ReturnItem}>Save</button>
           <button className="cancelButton" onClick={props.onExit}> cancel </button>
         </div>
