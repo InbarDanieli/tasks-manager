@@ -62,7 +62,7 @@ function TaskCreator(props) {
     <div className="modalBackground">
       <div className="modalContainer">
         <button className="closeButton" onClick={props.onExit}> <b> X </b> </button>
-        <input className="TaskTitle" type="text" placeholder="write your task" onChange={GetTask} value={task}></input>
+        <input className="TaskTitle" type="text" placeholder="write your task" maxlength="18" onChange={GetTask} value={task}></input>
         <textarea className="TaskText" placeholder="description..." onChange={GetDescription} value={description}></textarea>
         <div>
           <input className="TaskDate" type="date" onChange={GetDate} value={date} disabled={disable}></input>

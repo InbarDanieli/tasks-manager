@@ -8,16 +8,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 .modalContainer {
-  width: 45%;
-  height: 70%;
+  width: 700px;
+  height: 500px;
   border-radius: 12px;
   background-color: white;
   box-shadow: rgb(224, 217, 217) 0px 5px 15px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
   padding: 25px;
 }
 
@@ -119,49 +121,30 @@ input:focus {
 /* max from the number down */
 /* min from the number up */
 
-@media screen and (min-width: 1000px)
-{
-  .modalContainer {
-    width: 50%;
-    height: 80%;
-  }
-  
+
+@media screen and (max-width: 600px){
+.modalContainer{
+  width: 80%;  
+  height: 50%;
 }
-
-@media screen and (max-width: 1000px) and (min-width: 610px) {
-  .modalContainer {
-    width: 50%;
-    height: 80%;
-  }
-}
-
-@media screen and (max-width: 600px) and (min-width: 510px){
-  .modalContainer {
-    width: 50%;
-    height: 80%;
-  }
-
-  .closeButton {
-    font-size: x-small;
-  }
 
   .TaskTitle {
-    font-size: 10px;
+    font-size: 20px;
     border-width: 3px;
   }
   
   .TaskText {
-    font-size: 7px;
+    font-size: 14px;
     border-width: 3px;
   }
   
   .TaskDate {
-    font-size: 7px;
+    font-size: 10px;
     border-width: 3px;
   }
   
   .TaskTime {
-    font-size: 7px;
+    font-size: 10px;
     border-width: 3px;
   }
 
@@ -172,10 +155,4 @@ input:focus {
   .cancelButton {
     font-size: 15px;
   } 
-}
-
-@media screen and (max-width: 400px) {
-  .modalContainer {
- background-color: red;
-  }
 }
