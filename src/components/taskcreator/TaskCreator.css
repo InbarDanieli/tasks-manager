@@ -19,6 +19,7 @@
   box-shadow: rgb(224, 217, 217) 0px 5px 15px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
   padding: 25px;
 }
 
@@ -123,31 +124,27 @@ input:focus {
 
 @media screen and (max-width: 600px){
 .modalContainer{
-  width: inherit;
-  
+  width: 80%;  
+  height: 50%;
 }
 
-  .closeButton {
-    font-size: x-small;
-  }
-
   .TaskTitle {
-    font-size: 10px;
+    font-size: 20px;
     border-width: 3px;
   }
   
   .TaskText {
-    font-size: 7px;
+    font-size: 14px;
     border-width: 3px;
   }
   
   .TaskDate {
-    font-size: 7px;
+    font-size: 10px;
     border-width: 3px;
   }
   
   .TaskTime {
-    font-size: 7px;
+    font-size: 10px;
     border-width: 3px;
   }
 
