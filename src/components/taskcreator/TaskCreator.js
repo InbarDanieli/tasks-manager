@@ -64,10 +64,10 @@ function TaskCreator(props) {
         <button className="closeButton" onClick={props.onExit}> <b> X </b> </button>
         <input className="TaskTitle" type="text" placeholder="write your task" maxlength="18" onChange={GetTask} value={task}></input>
         <textarea className="TaskText" placeholder="description..." onChange={GetDescription} value={description}></textarea>
-        <div>
+        <div className='dateContainer'>
           <input className="TaskDate" type="date" onChange={GetDate} value={date} disabled={disable}></input>
           <input className="TaskTime" type="time" onChange={GetTime} value={time} disabled={disable}></input>
-          <button onClick={ChangeDate}> {chageDatebutton} </button>
+          <button className='disableDate' onClick={ChangeDate}> {chageDatebutton} </button>
         </div>
         <div className="changesButtons">
           <button className="saveButton" onClick={ReturnItem}>Save</button>

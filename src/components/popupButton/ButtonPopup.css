@@ -8,9 +8,9 @@
   display: inline-block;
   font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 20px;
-  font-weight: 600;
+  font-weight: bold;
   line-height: normal;
-  margin-top: 20px;
+  margin: 20px;
   width: fit-content;
   outline: none;
   padding: 16px 24px;
@@ -19,6 +19,7 @@
   transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
   user-select: none; 
   will-change: transform;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .button:hover {

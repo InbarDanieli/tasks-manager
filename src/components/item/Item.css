@@ -1,22 +1,17 @@
-.Item {
-  display: flex;
-  justify-content: center;
-}
-
-.List {
+.taskContainer {
   list-style: none;
   border-bottom: 2px black solid;
   border-left: 2px black solid;
   border-right: 2px black solid;
-  margin-top: 40px;
-  width: 700px;
+  width: 80%;
+  max-width: 800px;
 }
 
 .Title {
   width: 100%;
   text-align: center;
   border-bottom: 2px solid #000;
-  line-height: 0em;
+  line-height: 0;
   margin: -1px 0 20px;
 }
 
@@ -26,12 +21,12 @@
 }
 
 .CloseButton {
-  margin-left: 630px;
+  margin-left: 85%;
   cursor: pointer;
   border: none;
   background: none;
   color: rgb(170, 165, 165);
-  font-size: large;
+  font-size: 20px;
   z-index: 1;
 }
 
@@ -40,35 +35,14 @@
 }
 
 
-.BodyText{
+.descriptionText {
   word-wrap: break-word;
-  margin-bottom: 70px;
+  padding: 20px 0 50px 0;
 }
 
-.DateAndTime{
-  margin-top: -20px;
-  margin-left: 10px;
+.DateAndTime {
+  margin: -20px 0 0 20px;
   width: fit-content;
   border-bottom: 1px solid black;
 }
 
-@media screen and (max-width: 600px){
-  .Item{
-    justify-content: flex-start;
-  }
-
-  .List{
-    width: 100%;
-    margin: 16px;
-    display: flex;
-    flex-direction: column;
-  }
-  .Title{
-    font-size: 30px;
-  }
-  .CloseButton{
-    margin: 0%;
-    margin-left: 85%;
-  }
-  }
-  
