@@ -1,5 +1,6 @@
 import React from 'react'
 import Item from '../item/Item'
+import "./List.css"
 
 function List(props) {
   const tasks = (props.tasks).map((item, index) => {
@@ -8,9 +9,7 @@ function List(props) {
     )})
 
   return (
-    <div>
       <ul>{tasks}</ul>
-    </div>
   )
 }
 
