@@ -22,6 +22,9 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+
+@media screen and (min-width: 600px) {
+
 .button:hover {
   color: #fff;
   background-color: #1A1A1A;
@@ -32,4 +35,16 @@
 .button:active {
   box-shadow: none;
   transform: translateY(0);
+}
+
+}
+
+
+@media screen and (max-width: 600px) {
+  .button:active {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
 }

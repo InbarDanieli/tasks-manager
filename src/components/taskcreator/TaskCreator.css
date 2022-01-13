@@ -24,7 +24,7 @@
   align-items: center;
   gap: 20px;
   padding: 25px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .closeButton {
@@ -71,9 +71,11 @@
   gap: 20px;
 }
 
+
 .TaskDate {
   width: 40%;
   font-size: 15px;
+  margin-right: 10px;
 }
 
 .TaskTime {
@@ -185,4 +187,8 @@ input:focus {
     padding: 10px 0 0 0;
   }
 
+  .changesButtons button {
+    background: #7dc3e9;
+    color: #FFF;
+  }
 }
