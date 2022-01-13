@@ -49,7 +49,6 @@
   width: 90%;
   height: 30%;
   min-height: 100px;
-
   resize: none;
   border-radius: 5px;
   border: 3px solid #ccc;
@@ -138,6 +137,7 @@ input:checked+.slider:before {
   border-radius: 50%;
 }
 
+/*  */
 
 input {
   border-radius: 5px;
@@ -176,6 +176,31 @@ input:focus {
 }
 
 
+/* tooltip */
+.saveButton {
+  position: relative;
+  display: inline-block;
+  font-size: 2px;
+}
+
+.saveButton .required {
+  width: max-content;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  z-index: 1;
+  animation: fading 2s;
+}
+
+@keyframes fading{
+0%{color: red;}
+100%{color: transparent;}
+}
+
+
+
+
+
 @media screen and (max-width: 600px) {
   .dateContainer {
     gap: 5px;
@@ -184,7 +209,7 @@ input:focus {
   }
 
   .changesButtons {
-    padding: 10px 0 0 0;
+    padding: 10px 0 15px 0;
   }
 
   .changesButtons button {

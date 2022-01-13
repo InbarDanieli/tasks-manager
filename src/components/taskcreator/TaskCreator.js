@@ -12,6 +12,7 @@ function TaskCreator(props) {
   const [description, setDescription] = useState("")
   const [time, setTime] = useState("00:00:00")
   const [date, setDate] = useState(dateToday)
+  const [tooltip, settooltip] = useState(false)
 
   function GetTask(e) {
     setTask(e.target.value)
@@ -33,8 +34,7 @@ function TaskCreator(props) {
       setDisable(!disable)
     }
 
-    else
-    {
+    else {
       setRemovedate("none")
       setDisable(!disable)
     }
@@ -51,7 +51,10 @@ function TaskCreator(props) {
       props.onExit()
     }
     else {
-      return alert("make sure you added all the information needed")
+      setTimeout(() => {
+        settooltip(false)
+      }, 2000);
+      settooltip(true)
     }
   }
 
@@ -63,16 +66,16 @@ function TaskCreator(props) {
         <textarea className="TaskText" placeholder="description..." onChange={GetDescription} value={description}></textarea>
         <div className='dateContainer'>
           <span>
-          <input className="TaskDate" type="date" onChange={GetDate} value={date} disabled={disable}></input>
-          <input className="TaskTime" type="time" onChange={GetTime} value={time} disabled={disable}></input>
+            <input className="TaskDate" type="date" onChange={GetDate} value={date} disabled={disable}></input>
+            <input className="TaskTime" type="time" onChange={GetTime} value={time} disabled={disable}></input>
           </span>
           <label className="switch">
-        <input type="checkbox" id="OnOffButt" defaultChecked={!disable} onClick={ChangeDate}/>
-        <span className="slider round"></span>
-      </label>   
-    </div>
+            <input type="checkbox" id="OnOffButt" defaultChecked={!disable} onClick={ChangeDate} />
+            <span className="slider round"></span>
+          </label>
+        </div>
         <div className="changesButtons">
-          <button className="saveButton" onClick={ReturnItem}>Save</button>
+          <button className="saveButton" onClick={ReturnItem}>Save {tooltip && <span className="required">please fill required fields</span>}</button>
           <button className="cancelButton" onClick={props.onExit}> cancel </button>
         </div>
       </div>
