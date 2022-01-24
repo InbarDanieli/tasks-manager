@@ -29,26 +29,8 @@ function App() {
 
   function deleteHandler(Delindex) {
     setTaskarr(taskarr.filter((task, index) => index !== Delindex))
-for (let i = 0; i < localStorage.length; i++) {
-  if(localStorage[i] !== taskarr.description)
-  {
-    console.log(localStorage.getItem + "isntthere");
   }
-  // localStorage.removeItem(localStorage[i].)
   
-}
-  }
-
-  function saveData() {
-    taskarr.map((tasks) => {
-      if (tasks.description !== localStorage.getItem(tasks.task))
-        localStorage.setItem(tasks.task, tasks.description)
-    })
-    // taskarr.findIndex((nameofarr) =>nameofarr.task === arr)
-  }
-  saveData()
-  // console.log(localStorage);
-
   return (
     <div className="App">
       <ButtonPopup fullitem={(task) => { setTaskarr(taskarr.concat(task)) }} />
