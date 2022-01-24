@@ -9,19 +9,19 @@ function App() {
       task: "go to the movie",
       description: "this is a description 1",
       date: new Date(2018, 8, 5, 15, 30),
-  
+
     },
     {
       task: "be with my love",
       description: "this is a description 2",
       date: new Date(2012, 2, 7, 15, 30),
-    
+
     },
     {
       task: "play video games",
       description: "this is a description 3",
       date: new Date(2021, 11, 13, 15, 30),
-    
+
     },
   ]
 
@@ -29,7 +29,25 @@ function App() {
 
   function deleteHandler(Delindex) {
     setTaskarr(taskarr.filter((task, index) => index !== Delindex))
+for (let i = 0; i < localStorage.length; i++) {
+  if(localStorage[i] !== taskarr.description)
+  {
+    console.log(localStorage.getItem + "isntthere");
   }
+  // localStorage.removeItem(localStorage[i].)
+  
+}
+  }
+
+  function saveData() {
+    taskarr.map((tasks) => {
+      if (tasks.description !== localStorage.getItem(tasks.task))
+        localStorage.setItem(tasks.task, tasks.description)
+    })
+    // taskarr.findIndex((nameofarr) =>nameofarr.task === arr)
+  }
+  saveData()
+  // console.log(localStorage);
 
   return (
     <div className="App">

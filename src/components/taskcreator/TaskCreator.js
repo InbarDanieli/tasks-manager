@@ -59,8 +59,8 @@ function TaskCreator(props) {
   }
 
   return (
-    <div className="modalBackground">
-      <div className="modalContainer">
+    <div className="modalBackground" onClick={props.onExit}>
+      <div className="modalContainer" onClick={(e)=>{e.stopPropagation()}}>
         <button className="closeButton" onClick={props.onExit}> <b> X </b> </button>
         <input className="TaskTitle" type="text" placeholder="write your task" maxLength={18} onChange={GetTask} value={task}></input>
         <textarea className="TaskText" placeholder="description..." onChange={GetDescription} value={description}></textarea>
