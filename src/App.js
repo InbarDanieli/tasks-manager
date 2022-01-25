@@ -9,20 +9,26 @@ function App() {
    */
   const listitems = [
     {
-      task: "go to the movie",
-      description: "this is a description 1",
+      task: "Hello! 👋",
+      description: "and welcome to your little task-maneger! \n\n in this site you can add your own tasks to orginaze your everyday life 😄",
       date: new Date(2018, 8, 5, 15, 30),
 
     },
     {
-      task: "be with my love",
-      description: "this is a description 2",
+      task: "How to use it? 🤔",
+      description: "you can add your task by clicking on the \"Add Task\" button, and add your task info \n\n pro tip!😎\n you can disable the date by switching the date button to \"off\", like in this task, the date is diable👆",
       date: new Date(2012, 2, 7, 15, 30),
+      removedate: "none"
 
     },
     {
-      task: "play video games",
-      description: "this is a description 3",
+      task: "Close me! 👉",
+      description: "First step: to delete tasks just close them with the \"X\" button\n\nBUT⚠️!\n you cannot bring task back after closing it, so make sure you closed only the task you're done with",
+      date: new Date(2021, 11, 13, 15, 30),
+    },
+    {
+      task: "updates?😊",
+      description: "what you see its only the begining!\nyou can go to my GitHub page (link below👇) to read the updates\n\n Hope you like it!❤️",
       date: new Date(2021, 11, 13, 15, 30),
     },
   ]
@@ -36,7 +42,7 @@ function App() {
 
   function getLSitems() {
     let items = JSON.parse(localStorage.getItem("items"));
-    
+
     if (!items) {
       return
     }
@@ -56,11 +62,12 @@ function App() {
   function deleteHandler(Delindex) {
     setLSitems(taskarr.filter((task, index) => index !== Delindex))
   }
-  
+
   return (
     <div className="App">
       <ButtonPopup fullitem={(task) => { setLSitems(taskarr.concat(task)) }} />
       <List tasks={taskarr} onDelete={deleteHandler} />
+
     </div>
   );
 }
