@@ -68,6 +68,11 @@ function App() {
       <ButtonPopup fullitem={(task) => { setLSitems(taskarr.concat(task)) }} />
       <List tasks={taskarr} onDelete={deleteHandler} />
 
+      <div className='footer'>
+      <span>created by inbar danieli </span>
+      <a rel="noreferrer"href='https://github.com/InbarDanieli/tasks-manager' target="_blank">git hub page</a>
+      </div>
+
     </div>
   );
 }

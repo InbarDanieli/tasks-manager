@@ -2,3 +2,18 @@
   text-align: center;
 }
 
+.footer {
+  font-size: 10px;
+  margin-top: 40px;
+  border-top: 1px solid black;
+  display: flex;
+  gap: 32px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px;
+}
+
+.footer a {
+  color: blue;
+  text-decoration: none;
+}
