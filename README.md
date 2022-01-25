@@ -4,4 +4,3 @@ this is your [task manager](https://your-task-list.web.app/)
 ### future features:
 - add notification 
 - add to-do-list to the tasks
-- add emojies :smile:
