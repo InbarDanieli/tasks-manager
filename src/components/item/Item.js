@@ -2,6 +2,11 @@ import React from "react"
 import "./Item.css"
 // import trashIcon from "../../Assets/trash-alt-regular.svg"
 
+/**
+ * 
+ * @param {{item: {task: string, description:string, date: Date}, onDelete: (number)=>void}} props
+ * @returns 
+ */
 function Item(props) {
 
   return (
