@@ -63,6 +63,15 @@ function App() {
     setLSitems(taskarr.filter((task, index) => index !== Delindex))
   }
 
+  function ResetApp(){
+    if(window.confirm("WARNING! \n this will delete all your changes"))
+    {
+    localStorage.clear();
+    window.location.reload();
+    }
+    else {return}
+  }
+
   return (
     <div className="App">
       <ButtonPopup fullitem={(task) => { setLSitems(taskarr.concat(task)) }} />
@@ -71,6 +80,7 @@ function App() {
       <div className='footer'>
       <span>created by inbar danieli </span>
       <a rel="noreferrer"href='https://github.com/InbarDanieli/tasks-manager' target="_blank">git hub page</a>
+      <button onClick={ResetApp}>reset</button>
       </div>
 
     </div>
