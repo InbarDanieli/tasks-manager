@@ -4,6 +4,9 @@ import React, { useState } from 'react';
 import ButtonPopup from './components/popupButton/ButtonPopup';
 
 function App() {
+  /**
+   * 
+   */
   const listitems = [
     {
       task: "go to the movie",
@@ -21,19 +24,42 @@ function App() {
       task: "play video games",
       description: "this is a description 3",
       date: new Date(2021, 11, 13, 15, 30),
-    
     },
   ]
 
-  const [taskarr, setTaskarr] = useState(listitems);
+  const [taskarr, setTaskarr] = useState(getLSitems() || listitems);
 
+  function setLSitems(items) {
+    localStorage.setItem("items", JSON.stringify(items));
+    setTaskarr(items);
+  }
+
+  function getLSitems() {
+    let items = JSON.parse(localStorage.getItem("items"));
+    
+    if (!items) {
+      return
+    }
+
+    items = items.map((item) => {
+      const date = item.date
+      item.date = new Date(date);
+      return item;
+    });
+
+    return items
+  }
+  /**
+   * 
+   * @param {number} Delindex 
+   */
   function deleteHandler(Delindex) {
-    setTaskarr(taskarr.filter((task, index) => index !== Delindex))
+    setLSitems(taskarr.filter((task, index) => index !== Delindex))
   }
 
   return (
     <div className="App">
-      <ButtonPopup fullitem={(task) => { setTaskarr(taskarr.concat(task)) }} />
+      <ButtonPopup fullitem={(task) => { setLSitems(taskarr.concat(task)) }} />
       <List tasks={taskarr} onDelete={deleteHandler} />
     </div>
   );
