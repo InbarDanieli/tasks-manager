@@ -12,13 +12,13 @@ function App() {
       task: "go to the movie",
       description: "this is a description 1",
       date: new Date(2018, 8, 5, 15, 30),
-  
+
     },
     {
       task: "be with my love",
       description: "this is a description 2",
       date: new Date(2012, 2, 7, 15, 30),
-    
+
     },
     {
       task: "play video games",
@@ -56,7 +56,7 @@ function App() {
   function deleteHandler(Delindex) {
     setLSitems(taskarr.filter((task, index) => index !== Delindex))
   }
-
+  
   return (
     <div className="App">
       <ButtonPopup fullitem={(task) => { setLSitems(taskarr.concat(task)) }} />
