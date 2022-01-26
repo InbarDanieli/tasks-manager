@@ -1,5 +1,5 @@
 # task-manager
-this is your [task manager](https://your-task-list.web.app/)
+Go to the [task manager page](https://your-task-list.web.app/)
 <br/>
 <br/>
 ## future features:
