@@ -36,12 +36,12 @@ function App() {
   const [taskarr, setTaskarr] = useState(getLSitems() || listitems);
 
   function setLSitems(items) {
-    localStorage.setItem("items", JSON.stringify(items));
+    localStorage.setItem("TaskItems", JSON.stringify(items));
     setTaskarr(items);
   }
 
   function getLSitems() {
-    let items = JSON.parse(localStorage.getItem("items"));
+    let items = JSON.parse(localStorage.getItem("TaskItems"));
 
     if (!items) {
       return
