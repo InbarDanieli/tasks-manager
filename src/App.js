@@ -74,7 +74,9 @@ function App() {
 
   return (
     <div className="App">
-      <ButtonPopup fullitem={(task) => { setLSitems(taskarr.concat(task)) }} />
+      <div>
+      <ButtonPopup fullitem={(task) => {setLSitems(taskarr.concat(task)) }} />
+      </div>
       <List tasks={taskarr} onDelete={deleteHandler} />
 
       <div className='footer'>
