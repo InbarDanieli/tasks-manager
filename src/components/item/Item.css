@@ -20,20 +20,19 @@
   padding: 0 10px;
 }
 
-.CloseButton {
-  margin-left: 85%;
+.DeleteButton {
+  margin-left: 90%;
   cursor: pointer;
   border: none;
   background: none;
   color: rgb(170, 165, 165);
-  font-size: 20px;
   z-index: 1;
+  font-size: 20px;
 }
 
-.CloseButton:hover {
+.DeleteButton:hover {
   color: gray;
 }
-
 
 .descriptionText {
   white-space: pre-line;
@@ -47,3 +46,10 @@
   border-bottom: 1px solid black;
 }
 
+
+@media screen and (max-width: 600px) {
+  .DeleteButton{
+    margin-left: 85%;
+    margin-top: 5px;
+  }
+}
