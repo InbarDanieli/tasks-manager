@@ -1,0 +1,63 @@
+:root {
+  --yellowcolor: rgb(253, 253, 136);
+  --orangecolor: rgb(246, 199, 111);
+  --redcolor: rgb(241, 139, 139);
+  --greencolor: rgb(128, 233, 128);
+  --bluecolor: rgb(129, 129, 230);
+  --purplecolor: rgb(207, 121, 207);
+  --length: 25px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.container button, .container .colorSelect {
+  border: solid 1px;
+  border-radius: 50%;
+  width: var(--length);
+  height: var(--length);
+}
+
+.container button:hover {
+  --length: 27px;
+}
+
+.colorWrapper{
+  height: 27px;
+  width: 27px;
+}
+
+button.yellow {
+  background: var(--yellowcolor);
+  border-color: var(--yellowcolor);
+}
+
+button.orange {
+  background: var(--orangecolor);
+  border-color: var(--orangecolor);
+}
+
+button.red {
+  background: var(--redcolor);
+  border-color: var(--redcolor);
+}
+
+button.green {
+  background: var(--greencolor);
+  border-color: var(--greencolor);
+}
+
+button.blue {
+  background: var(--bluecolor);
+  border-color: var(--bluecolor);
+}
+
+button.purple {
+  background: var(--purplecolor);
+  border-color: var(--purplecolor);
+}

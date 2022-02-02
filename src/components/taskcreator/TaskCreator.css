@@ -9,14 +9,17 @@
   justify-content: center;
   align-items: center;
   z-index: 2;
+
 }
 
 .modalContainer {
+  position: relative;
   width: 75%;
   max-width: 700px;
   height: 60%;
   max-height: 500px;
   border-radius: 12px;
+  border: 2px solid;
   background-color: white;
   box-shadow: rgb(224, 217, 217) 0px 5px 15px;
   display: flex;
@@ -192,9 +195,22 @@ input:focus {
   animation: fading 2s;
 }
 
-@keyframes fading{
-0%{color: red;}
-100%{color: transparent;}
+.modalContainer .colors {
+  position: absolute;
+  top: 72px;
+  left: 8px;
+
+}
+
+
+@keyframes fading {
+  0% {
+    color: red;
+  }
+
+  100% {
+    color: transparent;
+  }
 }
 
 
