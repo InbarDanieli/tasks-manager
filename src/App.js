@@ -10,26 +10,37 @@ function App() {
   const listitems = [
     {
       task: "Hello! 👋",
-      description: "and welcome to your little task-maneger! \n\n in this site you can add your own tasks to orginaze your everyday life 😄",
+      description: "And welcome to your little task-manager! \n\n in this site you can add your tasks to organize your everyday life 😄",
       date: new Date(2018, 8, 5, 15, 30),
       bordercolor: "transparent"
     },
+
     {
       task: "How to use it? 🤔",
-      description: "you can add your task by clicking on the \"Add Task\" button, and add your task info \n\n pro tip!😎\n you can disable the date by switching the date button to \"off\", like in this task, the date is diable👆",
+      description: "You can add your task by clicking on the \"Add Task\" button and adding your task info \n\n pro tip!😎\n you can disable the date by switching the date button to \"off\", like in this task, the date is diable👆",
       date: new Date(2012, 2, 7, 15, 30),
       removedate: "none",
       bordercolor: "transparent"
     },
+
     {
-      task: "Close me! 👉",
-      description: "First step: to delete tasks just close them with the \"X\" button\n\nBUT⚠️!\n you cannot bring task back after closing it, so make sure you closed only the task you're done with",
+      task: "colors 🌈",
+      description: "To make your tasks more organized, you can add color tags like so 👉",
+      date: new Date(2021, 11, 13, 15, 30),
+      removedate: "none",
+      bordercolor: "blue",
+    },
+
+    {
+      task: "Delete me! 👉",
+      description: "First step: you can delete tasks by clicking on the trash icon\n\nBUT⚠️!\n You cannot bring a task back after you Delete it, so make sure you delete only the task you're done with",
       date: new Date(2021, 11, 13, 15, 30),
       bordercolor: "transparent",
     },
+
     {
-      task: "updates?😊",
-      description: "what you see its only the begining!\nyou can go to my GitHub page (link below👇) to read the updates\n\n Hope you like it!❤️",
+      task: "Updates?😊",
+      description: "What you see is only the beginning!\nYou can go to my GitHub page (link below👇) to read the updates\n\n Hope you like it!❤️",
       date: new Date(2021, 11, 13, 15, 30),
       bordercolor: "transparent",
     },
@@ -65,26 +76,25 @@ function App() {
     setLSitems(taskarr.filter((task, index) => index !== Delindex))
   }
 
-  function ResetApp(){
-    if(window.confirm("WARNING! \n this will delete all your changes"))
-    {
-    localStorage.clear();
-    window.location.reload();
+  function ResetApp() {
+    if (window.confirm("WARNING! \n this will delete all your changes")) {
+      localStorage.clear();
+      window.location.reload();
     }
-    else {return}
+    else { return }
   }
 
   return (
     <div className="App">
       <div>
-      <ButtonPopup fullitem={(task) => {setLSitems(taskarr.concat(task)) }} />
+        <ButtonPopup fullitem={(task) => { setLSitems(taskarr.concat(task)) }} />
       </div>
       <List tasks={taskarr} onDelete={deleteHandler} />
 
       <div className='footer'>
-      <span>created by inbar danieli </span>
-      <a rel="noreferrer"href='https://github.com/InbarDanieli/tasks-manager' target="_blank">git hub page</a>
-      <button onClick={ResetApp}>reset</button>
+        <span>created by inbar danieli </span>
+        <a rel="noreferrer" href='https://github.com/InbarDanieli/tasks-manager' target="_blank">GitHub page</a>
+        <button onClick={ResetApp}>reset</button>
       </div>
 
     </div>
