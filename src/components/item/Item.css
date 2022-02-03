@@ -21,10 +21,19 @@
   padding: 0 10px;
 }
 
+.DateAndTime {
+  position: absolute;
+  font-weight: bold;
+  top: 0;
+  left: 20px;
+  width: fit-content;
+  padding: 0;
+}
+
 .colorTag{
   position: absolute;
   top: 8px;
-  right: 6px;
+  left: 6px;
   width: 4px;
   height: 90%;
 }
@@ -32,7 +41,7 @@
 .descriptionText {
   white-space: pre-line;
   word-wrap: break-word;
-  padding: 20px 12px;
+  padding: 0 12px 8px;
 }
 
 .DeleteButton {
@@ -50,18 +59,10 @@
   color: gray;
 }
 
-.DateAndTime {
-  position: absolute;
-  font-weight: bold;
-  top: 0;
-  left: 12px;
-  width: fit-content;
-}
-
 
 @media screen and (max-width: 600px) {
   .DeleteButton{
-    margin-left: 80%;
+    margin-left: 85%;
   }
   .DateAndTime {
     top: 8px;
