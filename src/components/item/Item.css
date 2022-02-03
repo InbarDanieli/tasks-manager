@@ -5,6 +5,7 @@
   border-right: 2px black solid;
   width: 80%;
   max-width: 800px;
+  position: relative;
 }
 
 .Title {
@@ -34,6 +35,14 @@
   color: gray;
 }
 
+.colorTag{
+  position: absolute;
+  top: 8px;
+  right: 6px;
+  width: 4px;
+  height: 90%;
+}
+
 .descriptionText {
   white-space: pre-line;
   word-wrap: break-word;
@@ -49,7 +58,7 @@
 
 @media screen and (max-width: 600px) {
   .DeleteButton{
-    margin-left: 85%;
+    margin-left: 80%;
     margin-top: 5px;
   }
 }

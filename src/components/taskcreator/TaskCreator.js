@@ -14,6 +14,8 @@ function TaskCreator(props) {
   const [time, setTime] = useState("00:00:00")
   const [date, setDate] = useState(dateToday)
   const [tooltip, settooltip] = useState(false)
+  const [bordercolor, setBordercolor] = useState("transparent")
+
 
   function GetTask(e) {
     setTask(e.target.value)
@@ -44,11 +46,12 @@ function TaskCreator(props) {
   function ReturnItem() {
     if (task && description && date && time !== "") {
 
-      props.fullitem({ task, description, date: new Date(date + " " + time), removedate, })
+      props.fullitem({ task, description, date: new Date(date + " " + time), removedate, bordercolor})
       setDescription("")
       setTask("")
       setDate("")
       setTime("")
+      setBordercolor("transparent")
       props.onExit()
     }
     else {
@@ -58,7 +61,6 @@ function TaskCreator(props) {
       settooltip(true)
     }
   }
-  const [bordercolor, setBordercolor] = useState("transparent")
 
   return (
     <div className="modalBackground" onClick={props.onExit}>

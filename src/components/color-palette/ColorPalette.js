@@ -19,8 +19,8 @@ function SelectColors({ colorClicked }) {
         <button className={bordercolor} onClick={() => setOpenPallete(!openPallete)}></button>
         </div>
         {openPallete &&
-          colorarr.filter((color)=> color !== bordercolor).map((color) =>
-            <div className='colorWrapper'> <button className={color} onClick={() => {colorClickedHandler(color)}} ></button> </div>
+          colorarr.filter((color)=> color !== bordercolor).map((color, index) =>
+            <div key={index+color} className='colorWrapper'> <button className={color} onClick={() => {colorClickedHandler(color)}} ></button> </div>
           )
         }
       </div>
