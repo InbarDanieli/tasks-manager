@@ -21,8 +21,23 @@
   padding: 0 10px;
 }
 
+.colorTag{
+  position: absolute;
+  top: 8px;
+  right: 6px;
+  width: 4px;
+  height: 90%;
+}
+
+.descriptionText {
+  white-space: pre-line;
+  word-wrap: break-word;
+  padding: 20px 12px;
+}
+
 .DeleteButton {
   margin-left: 90%;
+  padding-bottom: 6px;
   cursor: pointer;
   border: none;
   background: none;
@@ -35,30 +50,20 @@
   color: gray;
 }
 
-.colorTag{
-  position: absolute;
-  top: 8px;
-  right: 6px;
-  width: 4px;
-  height: 90%;
-}
-
-.descriptionText {
-  white-space: pre-line;
-  word-wrap: break-word;
-  padding: 20px 0 50px 0;
-}
-
 .DateAndTime {
-  margin: -20px 0 0 20px;
+  position: absolute;
+  font-weight: bold;
+  top: 0;
+  left: 12px;
   width: fit-content;
-  border-bottom: 1px solid black;
 }
 
 
 @media screen and (max-width: 600px) {
   .DeleteButton{
     margin-left: 80%;
-    margin-top: 5px;
+  }
+  .DateAndTime {
+    top: 8px;
   }
 }
