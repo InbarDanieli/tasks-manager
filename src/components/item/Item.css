@@ -1,4 +1,7 @@
 .taskContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   list-style: none;
   border-bottom: 2px black solid;
   border-left: 2px black solid;
@@ -30,20 +33,6 @@
   padding: 0;
 }
 
-.colorTag{
-  position: absolute;
-  top: 8px;
-  left: 6px;
-  width: 4px;
-  height: 90%;
-}
-
-.descriptionText {
-  white-space: pre-line;
-  word-wrap: break-word;
-  padding: 0 12px 8px;
-}
-
 .DeleteButton {
   margin-left: 90%;
   padding-bottom: 6px;
@@ -59,12 +48,27 @@
   color: gray;
 }
 
+.colorTag {
+  position: absolute;
+  top: 8px;
+  left: 6px;
+  width: 4px;
+  height: 90%;
+}
+
+.descriptionText {
+  white-space: pre-line;
+  word-wrap: break-word;
+  padding: 0 12px 12px;
+}
+
 
 @media screen and (max-width: 600px) {
-  .DeleteButton{
+  .DeleteButton {
     margin-left: 85%;
   }
+
   .DateAndTime {
-    top: 8px;
+    top: 12px;
   }
 }
