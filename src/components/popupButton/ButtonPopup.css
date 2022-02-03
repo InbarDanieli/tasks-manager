@@ -31,6 +31,7 @@
   position: fixed;
   bottom: 0px;
   right: 10px;
+  z-index: 1;
 }
 
 @media screen and (min-width: 600px) {
@@ -59,7 +60,6 @@
     padding: 10px 18px;
     right: 0;
   }
-
 }
 
 @keyframes buttonAnimation {
