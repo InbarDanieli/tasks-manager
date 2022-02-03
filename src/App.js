@@ -25,7 +25,7 @@ function App() {
 
     {
       task: "colors 🌈",
-      description: "To make your tasks more organized, you can add color tags like so 👉",
+      description: "To make your tasks more organized by adding color tags \n 👈 like so",
       date: new Date(2021, 11, 13, 15, 30),
       removedate: "none",
       bordercolor: "blue",
