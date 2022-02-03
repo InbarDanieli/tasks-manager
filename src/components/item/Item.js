@@ -14,6 +14,7 @@ function Item(props) {
       <li className="taskContainer">
         <h1 className="Title"><span>{props.item.task}</span></h1>
         <button className="DeleteButton" onClick={props.onDelete}> <FaTrashAlt/> </button>
+        <div className="colorTag" style={{backgroundColor: `${props.item.bordercolor!=="transparent"?`var(--${props.item.bordercolor}color)`:"transparent"}`}}></div>
         <p className = "DateAndTime" style = {{display: props.item.removedate}}> {Intl.DateTimeFormat('en-GB', { dateStyle: "medium", timeStyle: "short" }).format(props.item.date)} </p>
         <div className="descriptionText">
           <p>{props.item.description}</p>
