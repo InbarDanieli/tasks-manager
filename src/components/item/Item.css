@@ -1,27 +1,38 @@
 .taskContainer {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  position: relative;
   list-style: none;
-  border-bottom: 2px black solid;
-  border-left: 2px black solid;
-  border-right: 2px black solid;
+  border: 2px black solid;
+  border-top: transparent;
   width: 80%;
   max-width: 800px;
-  position: relative;
 }
 
 .Title {
   width: 100%;
   text-align: center;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid rgb(0, 0, 0);
   line-height: 0;
-  margin: -1px 0 20px;
+  margin: 0 0 20px;
 }
 
 .Title span {
   background: #fff;
   padding: 0 10px;
+}
+
+.DeleteButton {
+  margin-left: 90%;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: rgb(170, 165, 165);
+  z-index: 1;
+  font-size: 20px;
+}
+.DeleteButton:hover {
+  color: gray;
 }
 
 .DateAndTime {
@@ -34,18 +45,10 @@
   margin-bottom: 0;
 }
 
-.DeleteButton {
-  margin-left: 90%;
-  cursor: pointer;
-  border: none;
-  background: none;
-  color: rgb(170, 165, 165);
-  z-index: 1;
-  font-size: 20px;
-}
-
-.DeleteButton:hover {
-  color: gray;
+.descriptionText {
+  white-space: pre-line;
+  word-wrap: break-word;
+  padding: 0 12px 12px;
 }
 
 .colorTag {
@@ -56,14 +59,12 @@
   height: 90%;
 }
 
-.descriptionText {
-  white-space: pre-line;
-  word-wrap: break-word;
-  padding: 0 12px 12px;
-}
-
 
 @media screen and (max-width: 600px) {
+  .taskContainer{
+    gap: 10px;
+  }
+
   .DeleteButton {
     margin-left: 85%;
   }
