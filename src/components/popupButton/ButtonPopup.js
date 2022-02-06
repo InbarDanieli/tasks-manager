@@ -8,6 +8,10 @@ function ButtonPopup(props) {
   const [buttonText, setButtonText] = useState("Add Task")
 
   useEffect(() => {
+      setUsepopup(!!props.itemValues)
+  }, [props.itemValues])
+
+  useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.pageYOffset > 110) {
         setClassName("button small")
@@ -18,14 +22,18 @@ function ButtonPopup(props) {
       }
     });
 
-    return window.removeEventListener("scroll", ()=>{})
-  }
-    , []);
+    return window.removeEventListener("scroll", () => { })
+  }, []);
 
   return (
     <div className="ButtonContainer">
-      <button className={className} onClick={() => { setUsepopup(true) }}>{buttonText}</button>
-      {usepopup && <TaskCreator onExit={() => setUsepopup(false)} fullitem={props.fullitem} />}
+      <button className={className} onClick={() => { setUsepopup(true)}}>{buttonText}</button>
+      {usepopup &&
+        <TaskCreator
+          onExit={() => {props.onExit(); setUsepopup(false)}}
+          fullitem={props.fullitem}
+          itemValues={props.itemValues}
+        />}
     </div>)
 }
 

@@ -73,7 +73,14 @@ function App() {
    * @param {number} Delindex 
    */
   function deleteHandler(Delindex) {
+    console.log(Delindex);
     setLSitems(taskarr.filter((task, index) => index !== Delindex))
+  }
+
+  const[itemID, setItemID] = useState("")
+  function editHandler(index){
+    setItemID(taskarr[index])
+    console.log(itemID);
   }
 
   function ResetApp() {
@@ -84,12 +91,13 @@ function App() {
     else { return }
   }
 
+
   return (
     <div className="App">
       <div>
-        <ButtonPopup fullitem={(task) => { setLSitems(taskarr.concat(task)) }} />
+        <ButtonPopup onExit={()=>{setItemID("")}} itemValues={itemID} fullitem={(task) =>{ setLSitems(taskarr.concat(task)) }} />
       </div>
-      <List tasks={taskarr} onDelete={deleteHandler} />
+      <List tasks={taskarr} onDelete={deleteHandler} onEdit={editHandler}/>
 
       <div className='footer'>
         <span>created by inbar danieli </span>

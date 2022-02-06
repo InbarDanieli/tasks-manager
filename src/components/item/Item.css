@@ -24,17 +24,13 @@
   padding: 0 10px;
 }
 
-.DateAndTime {
-  position: absolute;
-  font-weight: bold;
-  top: 0;
-  left: 20px;
-  width: fit-content;
-  padding: 0;
-  margin-bottom: 0;
+.descriptionText {
+  white-space: pre-line;
+  word-wrap: break-word;
+  padding: 0 12px 12px;
 }
 
-.DeleteButton {
+.DeleteButton, .EditButton {
   margin-left: 90%;
   cursor: pointer;
   border: none;
@@ -48,18 +44,23 @@
   color: gray;
 }
 
+
+.DateAndTime {
+  position: absolute;
+  font-weight: bold;
+  top: 0;
+  left: 20px;
+  width: fit-content;
+  padding: 0;
+  margin-bottom: 0;
+}
+
 .colorTag {
   position: absolute;
   top: 8px;
   left: 6px;
   width: 4px;
   height: 90%;
-}
-
-.descriptionText {
-  white-space: pre-line;
-  word-wrap: break-word;
-  padding: 0 12px 12px;
 }
 
 
