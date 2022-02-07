@@ -73,14 +73,7 @@ function App() {
    * @param {number} Delindex 
    */
   function deleteHandler(Delindex) {
-    console.log(Delindex);
     setLSitems(taskarr.filter((task, index) => index !== Delindex))
-  }
-
-  const[itemID, setItemID] = useState("")
-  function editHandler(index){
-    setItemID(taskarr[index])
-    console.log(itemID);
   }
 
   function ResetApp() {
@@ -91,13 +84,35 @@ function App() {
     else { return }
   }
 
+  const [editMode, setEditMode] = useState(false)
+  const [indexItem, setIndexItem] = useState()
+
+  const [itemID, setItemID] = useState("")
+  function editHandler(index) {
+    setItemID(taskarr[index])
+
+    setEditMode(true)
+    setIndexItem(index)
+  }
+
+  function FullItemsHandler(task) {
+    if(!editMode){
+      setLSitems(taskarr.concat(task))
+    }
+    else{
+      taskarr[indexItem] = task
+      setTaskarr(taskarr)
+    }
+    setIndexItem()
+    setEditMode(false)
+  }
 
   return (
     <div className="App">
       <div>
-        <ButtonPopup onExit={()=>{setItemID("")}} itemValues={itemID} fullitem={(task) =>{ setLSitems(taskarr.concat(task)) }} />
+        <ButtonPopup onExit={() => { setItemID("") }} itemValues={itemID} fullitem={(task) => { FullItemsHandler(task) }} />
       </div>
-      <List tasks={taskarr} onDelete={deleteHandler} onEdit={editHandler}/>
+      <List tasks={taskarr} onDelete={deleteHandler} onEdit={editHandler} />
 
       <div className='footer'>
         <span>created by inbar danieli </span>

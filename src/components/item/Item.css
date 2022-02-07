@@ -38,7 +38,7 @@
   font-size: 20px;
 }
 
-.DeleteButton:hover {
+.DeleteButton:hover, .EditButton:hover {
   color: gray;
 }
 
@@ -67,7 +67,7 @@
     gap: 10px;
   }
 
-  .DeleteButton {
+  .DeleteButton, .EditButton {
     margin-left: 85%;
   }
 
