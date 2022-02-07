@@ -5,7 +5,7 @@ Go to the [task manager page](https://your-task-list.web.app/)
 ## future features:
 - add notification 
 - add to-do-list to the tasks
-- have "edit" option to the tasks
+
 
 <br/><br/>
 
