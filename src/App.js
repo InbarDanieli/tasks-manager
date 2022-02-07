@@ -84,12 +84,35 @@ function App() {
     else { return }
   }
 
+  const [editMode, setEditMode] = useState(false)
+  const [indexItem, setIndexItem] = useState()
+
+  const [itemID, setItemID] = useState("")
+  function editHandler(index) {
+    setItemID(taskarr[index])
+
+    setEditMode(true)
+    setIndexItem(index)
+  }
+
+  function FullItemsHandler(task) {
+    if(!editMode){
+      setLSitems(taskarr.concat(task))
+    }
+    else{
+      taskarr[indexItem] = task
+      setTaskarr(taskarr)
+    }
+    setIndexItem()
+    setEditMode(false)
+  }
+
   return (
     <div className="App">
       <div>
-        <ButtonPopup fullitem={(task) => { setLSitems(taskarr.concat(task)) }} />
+        <ButtonPopup onExit={() => { setItemID("") }} itemValues={itemID} fullitem={(task) => { FullItemsHandler(task) }} />
       </div>
-      <List tasks={taskarr} onDelete={deleteHandler} />
+      <List tasks={taskarr} onDelete={deleteHandler} onEdit={editHandler} />
 
       <div className='footer'>
         <span>created by inbar danieli </span>

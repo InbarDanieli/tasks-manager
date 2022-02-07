@@ -22,7 +22,13 @@
   padding: 0 10px;
 }
 
-.DeleteButton {
+.descriptionText {
+  white-space: pre-line;
+  word-wrap: break-word;
+  padding: 0 12px 12px;
+}
+
+.DeleteButton, .EditButton {
   margin-left: 90%;
   cursor: pointer;
   border: none;
@@ -31,9 +37,11 @@
   z-index: 1;
   font-size: 20px;
 }
-.DeleteButton:hover {
+
+.DeleteButton:hover, .EditButton:hover {
   color: gray;
 }
+
 
 .DateAndTime {
   position: absolute;
@@ -43,12 +51,6 @@
   width: fit-content;
   padding: 0;
   margin-bottom: 0;
-}
-
-.descriptionText {
-  white-space: pre-line;
-  word-wrap: break-word;
-  padding: 0 12px 12px;
 }
 
 .colorTag {
@@ -65,7 +67,7 @@
     gap: 10px;
   }
 
-  .DeleteButton {
+  .DeleteButton, .EditButton {
     margin-left: 85%;
   }
 

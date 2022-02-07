@@ -195,11 +195,10 @@ input:focus {
   animation: fading 2s;
 }
 
-.modalContainer .colors {
+.colors {
   position: absolute;
   top: 72px;
   left: 8px;
-
 }
 
 
