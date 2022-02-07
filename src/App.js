@@ -101,7 +101,7 @@ function App() {
     }
     else{
       taskarr[indexItem] = task
-      setTaskarr(taskarr)
+      setLSitems(taskarr)
     }
     setIndexItem()
     setEditMode(false)
