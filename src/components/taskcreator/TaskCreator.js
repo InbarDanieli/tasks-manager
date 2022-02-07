@@ -80,6 +80,7 @@ function TaskCreator(props) {
     }
   }
 
+
   return (
     <div className="modalBackground" onClick={props.onExit}>
       <div className="modalContainer" style={{ borderColor: `${bordercolor !== "transparent" ? `var(--${bordercolor}color)` : "transparent"}` }} onClick={(e) => { e.stopPropagation() }}>
@@ -106,7 +107,7 @@ function TaskCreator(props) {
         </div>
 
         <div className='colors'>
-          <ColorPallete colorClicked={setBordercolor} />
+          <ColorPallete colorValue={bordercolor} colorClicked={setBordercolor} />
         </div>
 
       </div>

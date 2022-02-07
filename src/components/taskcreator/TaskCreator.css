@@ -213,10 +213,10 @@ input:focus {
 }
 
 
-
-
-
 @media screen and (max-width: 600px) {
+  .colors {
+    left: 2px;
+  }
   .dateContainer {
     gap: 5px;
     flex-direction: column;

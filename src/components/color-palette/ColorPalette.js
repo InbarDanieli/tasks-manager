@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import "./ColorPalette.css"
 
-function SelectColors({ colorClicked }) {
+function SelectColors({ colorClicked, colorValue }) {
   const colorarr = ["yellow", "orange", "red", "green", "blue", "purple","transparent"]
   const [openPallete, setOpenPallete] = useState(false)
-  const [bordercolor, setBordercolor] = useState("transparent")
+  const [bordercolor, setBordercolor] = useState(colorValue || "transparent")
 
   function colorClickedHandler(color) {
     setBordercolor(color)
