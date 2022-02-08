@@ -18,7 +18,8 @@ body{
   justify-content: flex-start;
   align-items: center;
   padding: 8px;
-  font-size: 10px;
+  font-size: 10px; 
+   -webkit-tap-highlight-color: transparent;
 }
 
 .footer a {
@@ -33,6 +34,6 @@ body{
   font-family: inherit;
   font-size: inherit;
   padding: 0;
-  float: right;
   margin-left: auto;
+  cursor: pointer;
 }
