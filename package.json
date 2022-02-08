@@ -16,10 +16,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "cypress run",
+    "eject": "react-scripts eject",
+    "cypress": "cypress open"
   },
-  "eslintConfig": {
+  "eslintConfig": { 
     "extends": [
       "react-app",
       "react-app/jest"
@@ -36,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^9.4.1"
   }
 }
