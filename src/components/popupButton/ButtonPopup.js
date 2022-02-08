@@ -8,7 +8,7 @@ function ButtonPopup(props) {
   const [buttonText, setButtonText] = useState("Add Task")
 
   useEffect(() => {
-      setUsepopup(!!props.itemValues)
+    setUsepopup(!!props.itemValues)
   }, [props.itemValues])
 
   useEffect(() => {
@@ -21,16 +21,15 @@ function ButtonPopup(props) {
         setButtonText("Add Task")
       }
     });
-
     return window.removeEventListener("scroll", () => { })
   }, []);
 
   return (
     <div className="ButtonContainer">
-      <button className={className} onClick={() => { setUsepopup(true)}}>{buttonText}</button>
+      <button className={className} onClick={() => { setUsepopup(true) }}>{buttonText}</button>
       {usepopup &&
         <TaskCreator
-          onExit={() => {props.onExit(); setUsepopup(false)}}
+          onExit={() => { props.onExit(); setUsepopup(false) }}
           fullitem={props.fullitem}
           itemValues={props.itemValues}
         />}

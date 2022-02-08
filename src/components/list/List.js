@@ -5,7 +5,11 @@ import "./List.css"
 function List(props) {
   const tasks = (props.tasks).map((item, index) => {
     return (
-      <Item item = {item} key= {index} onEdit={()=>{props.onEdit(index)}} onDelete = {()=>{props.onDelete(index)}}/>
+      <Item 
+      item = {item}
+      key= {index}
+      onEdit={()=>{props.onEdit(index)}}
+      onDelete = {()=>{props.onDelete(index)}}/>
     )})
 
   return (

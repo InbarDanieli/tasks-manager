@@ -8,10 +8,10 @@ function TaskCreator(props) {
   const [description, setDescription] = useState(props.itemValues.description || "")
 
   //set default of full date
-  const today = new Date(),
-    dateToday = today.toISOString().split('T')[0]
+  const today = new Date().toISOString().split('T')[0]
+ 
   const [time, setTime] = useState(props.itemValues.time === undefined ? "00:00:00" : PrintTime())
-  const [date, setDate] = useState(props.itemValues.date === undefined ? dateToday : PrintDate())
+  const [date, setDate] = useState(props.itemValues.date === undefined ? today : PrintDate())
   const [removedate, setRemovedate] = useState(props.itemValues.removedate || "block")
   const [disable, setDisable] = useState(PrintDisable)
 
@@ -82,28 +82,74 @@ function TaskCreator(props) {
 
 
   return (
-    <div className="modalBackground" onClick={props.onExit}>
-      <div className="modalContainer" style={{ borderColor: `${bordercolor !== "transparent" ? `var(--${bordercolor}color)` : "transparent"}` }} onClick={(e) => { e.stopPropagation() }}>
+    <div
+      className="modalBackground"
+      onClick={props.onExit}
+    >
+      <div
+        className="modalContainer"
+        style={{ borderColor: `${bordercolor !== "transparent" ? `var(--${bordercolor}color)` : "transparent"}` }}
+        onClick={(e) => { e.stopPropagation() }}
+      >
 
-        <button className="closeButton" onClick={props.onExit}> <b> X </b> </button>
+        <button
+          className="closeButton"
+          onClick={props.onExit}>
+          <b>X</b>
+        </button>
 
-        <input className="TaskTitle" type="text" placeholder="write your task" maxLength={18} onChange={GetTask} value={task}></input>
-        <textarea className="TaskText" placeholder="description..." onChange={GetDescription} value={description}></textarea>
+        <input
+          className="TaskTitle"
+          type="text"
+          placeholder="write your task"
+          maxLength={18}
+          onChange={GetTask}
+          value={task}>
+        </input>
+
+        <textarea
+          className="TaskText"
+          placeholder="description..."
+          onChange={GetDescription}
+          value={description}>
+        </textarea>
 
         <div className='dateContainer'>
           <span>
-            <input className="TaskDate" type="date" onChange={GetDate} value={date} disabled={disable}></input>
-            <input className="TaskTime" type="time" onChange={GetTime} value={time} disabled={disable}></input>
+            <input
+              className="TaskDate"
+              type="date"
+              onChange={GetDate}
+              value={date}
+              disabled={disable}>
+            </input>
+            <input
+              className="TaskTime"
+              type="time"
+              onChange={GetTime}
+              value={time}
+              disabled={disable}>
+            </input>
           </span>
           <label className="switch">
-            <input type="checkbox" id="OnOffButt" defaultChecked={!disable} onClick={ChangeDate} />
-            <span className="slider round"></span>
+            <input
+              type="checkbox"
+              id="OnOffButt"
+              defaultChecked={!disable}
+              onClick={ChangeDate}
+            /><span className="slider round"></span>
           </label>
         </div>
 
         <div className="changesButtons">
-          <button className="saveButton" onClick={ReturnItem}>Save {tooltip && <span className="required">please fill required fields</span>}</button>
-          <button className="cancelButton" onClick={props.onExit}>cancel</button>
+          <button
+            className="saveButton"
+            onClick={ReturnItem}>
+            Save {tooltip && <span className="required">please fill required fields</span>}
+          </button>
+          <button
+            className="cancelButton"
+            onClick={props.onExit}>cancel</button>
         </div>
 
         <div className='colors'>
