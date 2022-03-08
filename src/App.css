@@ -8,32 +8,3 @@ body{
   display: flex;
   flex-direction: column;
 }
-
-.footer {
-  margin-bottom: 0;
-  margin-top: auto;
-  border-top: 1px solid black;
-  display: flex;
-  gap: 32px;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 8px;
-  font-size: 10px; 
-   -webkit-tap-highlight-color: transparent;
-}
-
-.footer a {
-  color: blue;
-  text-decoration: none;
-}
-
-.footer button {
-  background: none;
-  border: none;
-  color: blue;
-  font-family: inherit;
-  font-size: inherit;
-  padding: 0;
-  margin-left: auto;
-  cursor: pointer;
-}

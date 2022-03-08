@@ -3,7 +3,7 @@ import List from './components/list/List';
 import React, { useState } from 'react';
 import ButtonPopup from './components/popupButton/ButtonPopup';
 import { IntroDescription } from './IntroDescription';
-import Footer from './Footer/Footer';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const listitems = IntroDescription
