@@ -9,7 +9,6 @@
   justify-content: center;
   align-items: center;
   z-index: 2;
-
 }
 
 .modalContainer {
@@ -28,6 +27,7 @@
   gap: 20px;
   padding: 25px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .closeButton {
