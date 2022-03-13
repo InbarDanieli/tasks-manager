@@ -36,6 +36,7 @@
   color: rgb(170, 165, 165);
   z-index: 1;
   font-size: 20px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .DeleteButton:hover, .EditButton:hover {
