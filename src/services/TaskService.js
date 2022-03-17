@@ -29,6 +29,7 @@ export function GetPageName() {
  */
 export function SetPageName(pageName) {
   localStorage.setItem(PAGE_NAME, pageName)
+  
 }
 
 /**

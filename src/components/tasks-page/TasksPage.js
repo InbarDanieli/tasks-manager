@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from "react-router-dom"
-import { SetTaskList, GetTaskList } from '../../services/TaskService'
+import { useNavigate, useParams } from "react-router-dom"
+import { SetTaskList, GetTaskList, GetPageName, SetPageName } from '../../services/TaskService'
 import ButtonPopup from '../popupButton/ButtonPopup';
 import Footer from '../Footer/Footer';
 import List from '../list/List';
@@ -8,6 +8,7 @@ import ErrorPage from '../Error page/ErrorPage';
 
 
 function TasksPage() {
+  const navigate = useNavigate()
   const { list: listname } = useParams()
   const [taskarr, setTaskarr] = useState(GetTaskList(listname))
   const [editMode, setEditMode] = useState(false)
@@ -29,15 +30,18 @@ function TasksPage() {
    * 
    * @param {number} Delindex 
    */
-  
+
   function deleteHandler(Delindex) {
     setLSitems(taskarr.filter((task, index) => index !== Delindex))
   }
 
   function ResetApp() {
     if (window.confirm("WARNING! \n this will delete all your changes")) {
-      localStorage.clear();
-      window.location.reload();
+      if (window.confirm("All your pages, tasks and info you added into this website will be gone\nare you sure you want to reset?")) {
+        localStorage.clear();
+        navigate("/")
+        window.location.reload();
+      }
     }
     else { return }
   }
