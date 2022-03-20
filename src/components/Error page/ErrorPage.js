@@ -1,23 +1,25 @@
 import React from 'react'
 import { GetTaskLists } from '../../services/TaskService';
-import ListOfPages from '../list-of-pages/ListOfPages';
+import { useParams } from "react-router-dom"
 
 function ErrorPage() {
+  const { list } = useParams()
+
   return (
     <div>
       {
-        !Object.keys(GetTaskLists()).length
+        !Object.keys(GetTaskLists()).length && list === "empty"
           ?
           <>
-          <h1>Empty</h1>
-          <p>we can see you dont have any page in your website</p>
-          click <ListOfPages/> to add new page
+            <h1>Empty</h1>
+            <p>we can see you dont have any page in your website</p>
+            {/* think how to add new page easely */}
           </>
           :
           <>
             <h1>OOPS 😳 !</h1>
             <p>this page does not exist</p>
-            {/* return to the last page youve been */}
+            {/* return to the last page youve been or to the empty page*/}
           </>
       }
     </div>

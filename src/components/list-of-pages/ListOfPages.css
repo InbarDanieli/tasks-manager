@@ -1,0 +1,70 @@
+.listOfPages-container {
+  background-color: rgb(235, 232, 232);
+  position: fixed;
+  z-index: 2;
+}
+
+.InputContainer {
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.InputContainer input {
+  background: rgb(238, 236, 236);
+  width: 80%;
+}
+
+.InputContainer button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  color: rgb(82, 81, 81);
+}
+
+.InputContainer button:hover {
+  color: black;
+}
+
+
+.LinkContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.LinkContainer:hover {
+  background-color: rgb(196, 193, 193);
+}
+
+.LinkText {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  width: 85%;
+}
+
+.DeleteLink {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 2;
+  border-left: 1px solid black;
+}
+
+.DeleteLink:hover {
+  color: rgb(224, 52, 52);
+}
+
+@media screen and (max-width: 600px) {
+  .LinkContainer {
+  justify-content: space-around;
+  }
+  .LinkText {
+  width: 70%;
+  }
+}

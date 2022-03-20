@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from "react-router-dom"
-import { SetTaskList, GetTaskList, GetPageName, SetPageName } from '../../services/TaskService'
+import { SetTaskList, GetTaskList } from '../../services/TaskService'
 import ButtonPopup from '../popupButton/ButtonPopup';
 import Footer from '../Footer/Footer';
 import List from '../list/List';
@@ -67,7 +67,7 @@ function TasksPage() {
 
   return (
     <div className="App">
-      {!!taskarr ?
+      {!!taskarr ? 
         <>
           <div>
             <ButtonPopup
