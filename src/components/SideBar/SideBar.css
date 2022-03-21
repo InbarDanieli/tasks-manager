@@ -1,3 +1,7 @@
+:root{
+  --softGrey: #f4f4f5;
+}
+
 .closeSBbutton {
   z-index: 1;
   position: absolute;
@@ -22,7 +26,7 @@
   height: 100%;
   position: relative;
   height: 100vh;
-  background-color: #F6F6F6;
+  background-color: var(--softGrey);
   overflow-x: hidden;
   transition: width 0.5s ease;
 }
