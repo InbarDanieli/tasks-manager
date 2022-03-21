@@ -13,7 +13,7 @@ function ButtonPopup(props) {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 110) {
+      if (window.pageYOffset > 140) {
         setClassName("button small")
         setButtonText("+")
       } else {

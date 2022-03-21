@@ -1,0 +1,46 @@
+:root{
+  --softGrey: #f4f4f5;
+}
+
+.closeSBbutton {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 170px;
+  display: block;
+  background: none;
+  border: none;
+  font-size: 18px;
+  transform: rotate(0deg);
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.closeSBbutton.close {
+  left: 0;
+  transform: rotate(180deg);
+}
+
+.open-sideB {
+  width: 200px;
+  height: 100%;
+  position: relative;
+  height: 100vh;
+  background-color: var(--softGrey);
+  overflow-x: hidden;
+  transition: width 0.5s ease;
+}
+
+.open-sideB.close {
+  width: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .open-sideB {
+  width: 90vw;
+  }
+  .closeSBbutton {
+    left: 83vw;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
