@@ -67,8 +67,9 @@ function TasksPage() {
 
   return (
     <div className="App">
-      {!!taskarr ? 
+      {!!taskarr ?
         <>
+          <h1 className='TaskPageTitle'>- {listname} -</h1>
           <div>
             <ButtonPopup
               onExit={() => { setEditItem("") }}
@@ -76,11 +77,15 @@ function TasksPage() {
               fullitem={(task) => { FullItemsHandler(task) }}
             />
           </div>
-          <List
-            tasks={taskarr}
-            onDelete={deleteHandler}
-            onEdit={editHandler}
-          />
+          {!!taskarr.length ?
+            <List
+              tasks={taskarr}
+              onDelete={deleteHandler}
+              onEdit={editHandler}
+            />
+            :
+            <p> Click on the "Add Task" 👆 to add your tasks           </p>
+          }
 
           <Footer onClick={ResetApp} />
         </>

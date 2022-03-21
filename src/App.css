@@ -1,4 +1,4 @@
-body{
+body {
   height: 100%;
 }
 
@@ -7,4 +7,10 @@ body{
   height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.TaskPageTitle {
+  font-size: 46px;
+  padding: 0;
+  margin: 0;
 }

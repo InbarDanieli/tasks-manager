@@ -33,10 +33,11 @@ useEffect(()=>{
 
     if (input !== "" && !/[\\/\#&\{\}<\>*\?$\!'\":\@+\-|\=]/g.test(input)) {
       if (!bool) {
-        SetTaskList(input, [{ ...NewPageDescription, task: `page ${input}` }])
+        SetTaskList(input, [])
         SetPageName(input)
         setFullLinks(fullLinks.concat(input))
         navigate(`/${input}`)
+        change()
       }
       else {
         window.alert("You can't add the same name to page");
