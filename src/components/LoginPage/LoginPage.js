@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from "react-router-dom"
-import { GetPageName } from '../../services/TaskService'
+import { GetPageName, GetTaskLists } from '../../services/TaskService'
 
 
 function LoginPage() {
@@ -8,8 +8,12 @@ function LoginPage() {
 
   useEffect(() => {
     const pageName = GetPageName()
-
-    navigate(pageName ? `/${pageName}` : '/intro')
+    if (!Object.keys(GetTaskLists()).length) {
+      navigate("/empty")
+    }
+    else {
+      navigate(pageName ? `/${pageName}` : '/intro')
+    }
 
   }, [navigate])
 
