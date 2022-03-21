@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import { MdDeleteForever, MdAddCircleOutline } from "react-icons/md"
-import { NewPageDescription } from '../../services/NewPageDescription'
 import { GetTaskLists, SetPageName, SetTaskList } from '../../services/TaskService'
 import "./ListOfPages.css"
 import SideBar from '../SideBar/SideBar'
@@ -14,7 +13,6 @@ function ListOfPages(props) {
   const [input, setInput] = useState("")
   const [open, setOpen] = useState(false)
   const [fullLinks, setFullLinks] = useState(Object.keys(GetTaskLists()))
-  console.log(typeof data);
 
   useEffect(() => {
     !!data && AddNewPage(data)
@@ -29,9 +27,8 @@ function ListOfPages(props) {
   function AddNewPage(input) {
     let bool = false
     fullLinks.map((link) => link === input && (bool = true))
-    console.log(/[\\/]/g.test(input))
 
-    if (input !== "" && !/[\\/\#&\{\}<\>*\?$\!'\":\@+\-|\=]/g.test(input)) {
+    if (input !== "" && !/[\\/#&{}<>*?$!'":@+\-|=]/g.test(input) && input !== "empty") {
       if (!bool) {
         SetTaskList(input, [])
         SetPageName(input)
@@ -45,7 +42,7 @@ function ListOfPages(props) {
       setInput("")
     }
     else {
-      window.alert("invalid character!\none or more of your characters cant be added as page name\n(invalid: \\, / , # , & ,  , { , } , < , > , * , ? , $ , ! , ' , \" , : , @ , + , - , | , =)")
+      window.alert("invalid character!\none or more of your characters cant be added as page name\n(invalid: \\, / , # , & ,  , { , } , < , > , * , ? , $ , ! , ' , \" , : , @ , + , - , | , =)\nalso, as this moment, you cannot add page named empty")
     }
   }
 
