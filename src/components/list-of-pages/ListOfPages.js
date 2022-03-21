@@ -14,11 +14,11 @@ function ListOfPages(props) {
   const [input, setInput] = useState("")
   const [open, setOpen] = useState(false)
   const [fullLinks, setFullLinks] = useState(Object.keys(GetTaskLists()))
-console.log(typeof data);
+  console.log(typeof data);
 
-useEffect(()=>{
-  !!data && AddNewPage(data)
-}, [data])
+  useEffect(() => {
+    !!data && AddNewPage(data)
+  }, [data])
 
   function keyHandler(e) {
     if (e.key === "Enter") {
@@ -67,6 +67,7 @@ useEffect(()=>{
       <SideBar onclick={change} open={open}>
         <div className='InputContainer'>
           <input
+            maxLength={18}
             onKeyPress={keyHandler}
             onChange={(e) => setInput(e.target.value)}
             placeholder='add page'

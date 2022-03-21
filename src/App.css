@@ -13,4 +13,23 @@ body {
   font-size: 46px;
   padding: 0;
   margin: 0;
+  white-space: pre-line;
+  word-wrap: break-word;
+}
+
+
+@media screen and (min-width: 600px) {
+  .TaskPageTitle::after {
+    content: " -";
+  }
+
+  .TaskPageTitle::before {
+    content: "- ";
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .TaskPageTitle {
+    padding: 0 6px 0;
+  }
 }

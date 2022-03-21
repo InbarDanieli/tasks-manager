@@ -69,7 +69,7 @@ function TasksPage() {
     <div className="App">
       {!!taskarr ?
         <>
-          <h1 className='TaskPageTitle'>- {listname} -</h1>
+          <h1 className='TaskPageTitle'>{listname}</h1>
           <div>
             <ButtonPopup
               onExit={() => { setEditItem("") }}
