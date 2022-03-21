@@ -19,7 +19,7 @@ function ListOfPages(props) {
       AddNewPage(data)
       changeData("")
     }
-  }, [data,])
+  }, [data])
 
   function keyHandler(e) {
     if (e.key === "Enter") {
