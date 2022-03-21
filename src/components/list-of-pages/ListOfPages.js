@@ -73,7 +73,7 @@ function ListOfPages(props) {
             placeholder='add page'
             type="text"
             value={input} />
-          <button onClick={AddNewPage}><MdAddCircleOutline /></button>
+          <button onClick={()=> AddNewPage(input)}><MdAddCircleOutline /></button>
         </div>
         {
           fullLinks.map((items, index) => {
