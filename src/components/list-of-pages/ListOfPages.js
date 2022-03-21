@@ -8,15 +8,18 @@ import { UserProvider } from '../../App'
 
 
 function ListOfPages(props) {
-  const { data } = useContext(UserProvider)
+  const { data, changeData } = useContext(UserProvider)
   const navigate = useNavigate()
   const [input, setInput] = useState("")
   const [open, setOpen] = useState(false)
   const [fullLinks, setFullLinks] = useState(Object.keys(GetTaskLists()))
 
   useEffect(() => {
-    !!data && AddNewPage(data)
-  }, [data])
+    if (!!data) {
+      AddNewPage(data)
+      changeData("")
+    }
+  }, [data,])
 
   function keyHandler(e) {
     if (e.key === "Enter") {
