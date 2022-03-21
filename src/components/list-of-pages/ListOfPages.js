@@ -19,7 +19,7 @@ function ListOfPages(props) {
       AddNewPage(data)
       changeData("")
     }
-  }, [data])
+  }, [data]) // eslint-disable-line react-hooks/exhaustive-deps
 
   function keyHandler(e) {
     if (e.key === "Enter") {
