@@ -1,16 +1,16 @@
-:root{
+:root {
   --softGrey: #f4f4f5;
 }
 
 .closeSBbutton {
   z-index: 1;
   position: absolute;
-  top: 0;
-  left: 170px;
+  top: 8px;
+  left: 160px;
   display: block;
   background: none;
   border: none;
-  font-size: 18px;
+  font-size: 24px;
   transform: rotate(0deg);
   transition: all 0.5s ease;
   cursor: pointer;
@@ -19,6 +19,14 @@
 .closeSBbutton.close {
   left: 0;
   transform: rotate(180deg);
+}
+
+.closeSBbutton.close:hover{
+  animation: openSideBar 0.5s 2 0.3s ease;
+}
+
+.closeSBbutton.close:active{
+  animation: none;
 }
 
 .open-sideB {
@@ -37,10 +45,28 @@
 
 @media screen and (max-width: 600px) {
   .open-sideB {
-  width: 90vw;
+    width: 90vw;
   }
+
   .closeSBbutton {
     left: 83vw;
     -webkit-tap-highlight-color: transparent;
+  }
+  .closeSBbutton.close:hover{
+    animation: none;
+  }
+}
+
+@keyframes openSideBar {
+  0% {
+    left: 0
+  }
+
+  50% {
+    left: 8px
+  }
+
+  100% {
+    left: 0
   }
 }
