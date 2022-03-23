@@ -28,11 +28,11 @@ function TasksPage() {
 
   /**
    * 
-   * @param {number} Delindex 
+   * @param {number} DeleteIndex 
    */
 
-  function deleteHandler(Delindex) {
-    setLSitems(taskarr.filter((task, index) => index !== Delindex))
+  function deleteHandler(DeleteIndex) {
+    setLSitems(taskarr.filter((task, index) => index !== DeleteIndex))
   }
 
   function ResetApp() {
@@ -43,7 +43,6 @@ function TasksPage() {
         window.location.reload();
       }
     }
-    else { return }
   }
 
 
@@ -67,8 +66,8 @@ function TasksPage() {
 
   return (
     <div className="App">
-      {!!taskarr ?
-        <>
+      {!!taskarr
+        ? <>
           <h1 className='TaskPageTitle'>{listname}</h1>
           <div>
             <ButtonPopup
@@ -77,14 +76,13 @@ function TasksPage() {
               fullitem={(task) => { FullItemsHandler(task) }}
             />
           </div>
-          {!!taskarr.length ?
-            <List
+          {!!taskarr.length
+            ? <List
               tasks={taskarr}
               onDelete={deleteHandler}
               onEdit={editHandler}
             />
-            :
-            <p> Click on the "Add Task" 👆 to add your tasks           </p>
+            : <p> Click on the "Add Task" 👆 to add your tasks </p>
           }
 
           <Footer onClick={ResetApp} />
