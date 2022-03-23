@@ -1,34 +1,34 @@
 import React from 'react'
 
-function Popup(props) {
+function Popup({onExit, bordercolor, children, ReturnItem, tooltip, confirm, cancel}) {
   return (
     <div
       className="modalBackground"
-      onClick={props.onExit}
+      onClick={onExit}
     >
       <div
         className="modalContainer"
-        style={{ borderColor: `${props.bordercolor !== "transparent" ? `var(--${props.bordercolor}color)` : "transparent"}` }}
+        style={{ borderColor: `${bordercolor !== "transparent" ? `var(--${bordercolor}color)` : "transparent"}` }}
         onClick={(e) => { e.stopPropagation() }}
       >
 
         <button
           className="closeButton"
-          onClick={props.onExit}>
+          onClick={onExit}>
           <b>X</b>
         </button>
 
-        {props.children}
+        {children}
 
         <div className="changesButtons">
           <button
             className="saveButton"
-            onClick={props.ReturnItem}>
-            {props.confirm} {props.tooltip && <span className="required">please fill required fields</span>}
+            onClick={ReturnItem}>
+            {confirm} {tooltip && <span className="required">please fill required fields</span>}
           </button>
           <button
             className="cancelButton"
-            onClick={props.onExit}>{props.cancel}</button>
+            onClick={onExit}>{cancel}</button>
         </div>
 
       </div>
