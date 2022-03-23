@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "./TaskCreator.css"
 import ColorPallete from "../color-palette/ColorPalette"
+import Popup from '../popup/Popup'
 
 function TaskCreator(props) {
   //set default of title+description
@@ -82,21 +83,12 @@ function TaskCreator(props) {
 
 
   return (
-    <div
-      className="modalBackground"
-      onClick={props.onExit}
+    <Popup
+    onExit= {props.onExit}
+    bordercolor = {bordercolor}
+    ReturnItem = {ReturnItem}
+    tooltip = {tooltip}
     >
-      <div
-        className="modalContainer"
-        style={{ borderColor: `${bordercolor !== "transparent" ? `var(--${bordercolor}color)` : "transparent"}` }}
-        onClick={(e) => { e.stopPropagation() }}
-      >
-
-        <button
-          className="closeButton"
-          onClick={props.onExit}>
-          <b>X</b>
-        </button>
 
         <input
           className="TaskTitle"
@@ -141,23 +133,11 @@ function TaskCreator(props) {
           </label>
         </div>
 
-        <div className="changesButtons">
-          <button
-            className="saveButton"
-            onClick={ReturnItem}>
-            Save {tooltip && <span className="required">please fill required fields</span>}
-          </button>
-          <button
-            className="cancelButton"
-            onClick={props.onExit}>cancel</button>
-        </div>
-
         <div className='colors'>
           <ColorPallete colorValue={bordercolor} colorClicked={setBordercolor} />
         </div>
 
-      </div>
-    </div>
+    </Popup>
   )
 }
 
