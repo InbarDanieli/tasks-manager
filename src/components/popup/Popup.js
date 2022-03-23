@@ -33,8 +33,6 @@ function Popup(props) {
 
       </div>
     </div>
-
-
     )
 }
 
