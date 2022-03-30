@@ -38,6 +38,6 @@ function Popup(props) {
 
 Popup.defaultProps = {
   confirm: "save",
-  cancel: "cancle",
+  cancel: "cancel",
 }
 export default Popup
