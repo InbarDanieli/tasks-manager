@@ -38,6 +38,6 @@ function Popup({onExit, bordercolor, children, ReturnItem, tooltip, confirm, can
 
 Popup.defaultProps = {
   confirm: "save",
-  cancel: "cancle",
+  cancel: "cancel",
 }
 export default Popup
