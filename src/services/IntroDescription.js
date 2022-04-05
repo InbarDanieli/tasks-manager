@@ -28,16 +28,9 @@ export const IntroDescription = {
   },
   {
     task: "Getting started!😄",
-    description: "First step: see the >> arrow on the top-left of the page?\nclick on it!\nit will open your sidebar that will contain all you task pages!\nyou can add new pages to get even more orgenized and delete pages\n(⚠️: when you delete a page, you cannot bring it back)\n\nso go ahead and give it a try by adding your firt page!",
+    description: "First step: see the >> arrow on the top-left of the page?\nclick on it!\nit will open your sidebar that will contain all you task pages!\nyou can add new pages to get even more orgenized and delete pages\n(⚠️: when you delete a page, you cannot bring it back)\n\nso go ahead and give it a try by adding your firt page!\n\n Hope you like it!❤️",
     date: new Date(2021, 11, 13, 15, 30),
     bordercolor: "transparent",
   },
-  // {
-  //   task: "Contact me!",
-  //   description: "",
-  //   // You can see more of my projects on my GitHub page (link below👇)\n\n Hope you like it!❤️",
-  //   date: new Date(2021, 11, 13, 15, 30),
-  //   bordercolor: "transparent",
-  // }
 ],
 }
